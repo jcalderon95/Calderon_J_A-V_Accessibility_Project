@@ -2,10 +2,10 @@ export default {
 
     template: `
 
-    <section class="videoPlayer">
-        <video ref="movie" @timeupdate="showTime">
-            <source src="video/avengers.mp4" type="video/mp4">
-            <track kind="subtitles" src="subtitles/subtitles_movie.vtt" srclang="en" default>
+    <section class="videoPlayer tvshowPlayer">
+        <video ref="tvShow" @timeupdate="showTime">
+            <source src="video/ozark.mp4" type="video/mp4">
+            <track kind="subtitles" src="subtitles/subtitles_tvshow.vtt" srclang="en" default>
             <p>Your browser doesn't support HTML5 video. Here is a <a href="video/avengers.mp4">link to the video</a> instead.</p>
         </video>
     
@@ -42,9 +42,9 @@ export default {
 
     watch: {
         volume(value){
-            let movie = this.$refs.movie;
+            let tvShow = this.$refs.tvShow;
             this.volume = value;
-            movie.volume = value / 100;
+            tvShow.volume = value / 100;
         }
     },
 
@@ -52,43 +52,42 @@ export default {
     methods: {
 
         play(){
-            let movie = this.$refs.movie;
+            let tvShow = this.$refs.tvShow;
 
-            if (movie.paused){
-                movie.play();
+            if (tvShow.paused){
+                tvShow.play();
                 this.playPause = "Pause";
 
             }else{
-                movie.pause();
+                tvShow.pause();
                 this.playPause = "Play";
             }
 
         },
 
         stop(){
-            let movie = this.$refs.movie;
+            let tvShow = this.$refs.tvShow;
 
-            movie.pause();
-            movie.currentTime = 0;
+            tvShow.pause();
+            tvShow.currentTime = 0;
             this.playPause = "Play";
         },
 
         rewind(){
-            let movie = this.$refs.movie;
+            let tvShow = this.$refs.tvShow;
             
-            movie.currentTime -= 3;
+            tvShow.currentTime -= 3;
         },
 
         forward(){
-            let movie = this.$refs.movie;
+            let tvShow = this.$refs.tvShow;
 
-            movie.currentTime += 3;
-            if(movie.currentTime >= movie.duration || movie.paused) {
-                movie.pause();
-                movie.currentTime = 0;
+            tvShow.currentTime += 3;
+            if(tvShow.currentTime >= tvShow.duration || tvShow.paused) {
+                tvShow.pause();
+                tvShow.currentTime = 0;
                 this.playPause = "Play";
 
-            //   playPauseBtn.textContent = 'Play';
             }
         },
 
@@ -115,12 +114,12 @@ export default {
         },
 
         showTime(){
-            let movie = this.$refs.movie;
+            let tvShow = this.$refs.tvShow;
 
-            let minutes = Math.floor(movie.currentTime / 60);
-            let seconds = Math.floor(movie.currentTime - minutes * 60);
+            let minutes = Math.floor(tvShow.currentTime / 60);
+            let seconds = Math.floor(tvShow.currentTime - minutes * 60);
 
-            let progress = Math.floor((movie.currentTime / movie.duration) * 100);
+            let progress = Math.floor((tvShow.currentTime / tvShow.duration) * 100);
 
             this.progress = progress;
 
@@ -133,24 +132,24 @@ export default {
         },
 
         updateProgress(){
-            let movie = this.$refs.movie;
+            let tvShow = this.$refs.tvShow;
             let progressBar = this.$refs.progressBar;
 
             // console.log(progressBar.value);
-            movie.currentTime = movie.duration * progressBar.value / 100;
+            tvShow.currentTime = tvShow.duration * progressBar.value / 100;
 
         },
 
 
         toggleFullScreen(){
             console.log("fired");
-                let movie = this.$refs.movie;
+                let tvShow = this.$refs.tvShow;
 
                 if (!document.mozFullScreen && !document.webkitFullScreen) {
-                    if (movie.mozRequestFullScreen) {
-                      movie.mozRequestFullScreen();
+                    if (tvShow.mozRequestFullScreen) {
+                      tvShow.mozRequestFullScreen();
                     } else {
-                      movie.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+                      tvShow.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
                     }
                   } else {
                     if (document.mozCancelFullScreen) {
@@ -163,12 +162,12 @@ export default {
         },
 
         hideSubtitles(){
-            let subtitle = this.$refs.movie.textTracks[0];
+            let subtitle = this.$refs.tvShow.textTracks[0];
             subtitle.mode = 'hidden';
         },
 
         toggleSubtitles(){
-            let subtitle = this.$refs.movie.textTracks[0];
+            let subtitle = this.$refs.tvShow.textTracks[0];
 
             if(subtitle.mode === 'hidden'){
                 subtitle.mode = 'showing';

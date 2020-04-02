@@ -1,4 +1,6 @@
 import Movie from "./components/Movie.js";
+import TvShow from "./components/TvShow.js";
+
 
 const vm = new Vue({
 
@@ -21,7 +23,8 @@ const vm = new Vue({
     },
 
     components: {
-        movie: Movie
+        movie: Movie,
+        tvshow: TvShow
     }
 
 }).$mount("#app");
