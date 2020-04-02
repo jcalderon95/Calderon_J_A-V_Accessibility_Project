@@ -1,5 +1,8 @@
 @import 'modules/_audio';
 @import 'modules/_video';
+@import 'modules/_progressBar';
+@import 'modules/_volumeBar';
+
 
 .hidden{
     display: none;
@@ -9,3 +12,4 @@
     text-align: center;
     margin-bottom: 20px;
 }
+

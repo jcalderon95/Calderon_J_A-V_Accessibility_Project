@@ -12,8 +12,10 @@ export default {
         </video>
     
         <div class="videoControls">
+        <div class="progress">
             <span class="time">{{ time }}</span>
-            <input ref="progressBar" @change="updateProgress" type="range" min="0" max="100" v-model.number="progress"> 
+            <input class="progressBar" ref="progressBar" @change="updateProgress" type="range" min="0" max="100" v-model.number="progress"> 
+        </div>
             <button @click.prevent="play" class="playpause">{{playPause}}</button>
             <button @click.prevent="stop" class="stop">Stop</button>
             <button @click.prevent="rewind" class="rewind">Rewind</button>

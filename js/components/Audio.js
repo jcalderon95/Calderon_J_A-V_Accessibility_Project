@@ -12,8 +12,10 @@ export default {
         </audio>
     
         <div class="audioControls">
-            <span class="time">{{ time }}</span>
-            <input ref="progressBar" @change="updateProgress" type="range" min="0" max="100" v-model.number="progress"> 
+            <div class="progress">
+                <span class="time">{{ time }}</span>
+                <input class="progressBar" ref="progressBar" @change="updateProgress" type="range" min="0" max="100" v-model.number="progress"> 
+            </div>
             <button @click.prevent="play" class="playpause">{{playPause}}</button>
             <button @click.prevent="stop" class="stop">Stop</button>
             <button @click.prevent="rewind" class="rewind">Rewind</button>
@@ -25,75 +27,85 @@ export default {
             <button @click.prevent="showLyrics">Lyrics</button>
         </div>
 
-        <p v-if="lyricsOn">Is this the real life?
-        Is this just fantasy?
-        Caught in a landslide,
-        No escape from reality.
-        
-        Open your eyes,
-        Look up to the skies and see,
-        I'm just a poor boy, I need no sympathy,
-        Because I'm easy come, easy go,
-        Little high, little low,
-        Any way the wind blows doesn't really matter to me, to me.
-        
-        Mama, just killed a man,
-        Put a gun against his head,
-        Pulled my trigger, now he's dead.
-        Mama, life had just begun,
-        But now I've gone and thrown it all away.
-        
-        Mama, ooh,
-        Didn't mean to make you cry,
-        If I'm not back again this time tomorrow,
-        Carry on, carry on as if nothing really matters.
-        
-        Too late, my time has come,
-        Sends shivers down my spine,
-        Body's aching all the time.
-        Goodbye, everybody, I've got to go,
-        Gotta leave you all behind and face the truth.
-        
-        Mama, ooh (any way the wind blows),
-        I don't wanna die,
-        I sometimes wish I'd never been born at all.
-        
-        I see a little silhouetto of a man,
-        Scaramouche, Scaramouche, will you do the Fandango?
-        Thunderbolt and lightning,
-        Very, very frightening me.
-        (Galileo) Galileo.
-        (Galileo) Galileo,
-        Galileo Figaro
-        Magnifico-o-o-o-o.
-        
-        I'm just a poor boy, nobody loves me.
-        He's just a poor boy from a poor family,
-        Spare him his life from this monstrosity.
-        
-        Easy come, easy go, will you let me go?
-        Bismillah! No, we will not let you go. (Let him go!)
-        Bismillah! We will not let you go. (Let him go!)
-        Bismillah! We will not let you go. (Let me go!)
-        Will not let you go. (Let me go!)
-        Never let you go (Never, never, never, never let me go)
-        Oh oh oh oh
-        No, no, no, no, no, no, no
-        Oh, mama mia, mama mia (Mama mia, let me go.)
-        Beelzebub has a devil put aside for me, for me, for me.
-        
-        So you think you can stone me and spit in my eye?
-        So you think you can love me and leave me to die?
-        Oh, baby, can't do this to me, baby,
-        Just gotta get out, just gotta get right outta here.
-        
-        (Ooooh, ooh yeah, ooh yeah)
-        
-        Nothing really matters,
-        Anyone can see,
-        Nothing really matters,
-        Nothing really matters to me.
-        
+        <p class="lyrics" v-if="lyricsOn">
+        Is this the real life?<br>
+        Is this just fantasy?<br>
+        Caught in a landslide,<br>
+        No escape from reality.<br>
+        <br>
+
+        Open your eyes,<br>
+        Look up to the skies and see,<br>
+        I'm just a poor boy, I need no sympathy,<br>
+        Because I'm easy come, easy go,<br>
+        Little high, little low,<br>
+        Any way the wind blows doesn't really matter to me, to me.<br>
+        <br>
+
+        Mama, just killed a man,<br>
+        Put a gun against his head,<br>
+        Pulled my trigger, now he's dead.<br>
+        Mama, life had just begun,<br>
+        But now I've gone and thrown it all away.<br>
+        <br>
+
+        Mama, ooh,<br>
+        Didn't mean to make you cry,<br>
+        If I'm not back again this time tomorrow,<br>
+        Carry on, carry on as if nothing really matters.<br>
+        <br>
+
+        Too late, my time has come,<br>
+        Sends shivers down my spine,<br>
+        Body's aching all the time.<br>
+        Goodbye, everybody, I've got to go,<br>
+        Gotta leave you all behind and face the truth.<br>
+        <br>
+
+        Mama, ooh (any way the wind blows),<br>
+        I don't wanna die,<br>
+        I sometimes wish I'd never been born at all.<br>
+        <br>
+
+        I see a little silhouetto of a man,<br>
+        Scaramouche, Scaramouche, will you do the Fandango?<br>
+        Thunderbolt and lightning,<br>
+        Very, very frightening me.<br>
+        (Galileo) Galileo.<br>
+        (Galileo) Galileo,<br>
+        Galileo Figaro<br>
+        Magnifico-o-o-o-o.<br>
+        <br>
+
+        I'm just a poor boy, nobody loves me.<br>
+        He's just a poor boy from a poor family,<br>
+        Spare him his life from this monstrosity.<br>
+        <br>
+
+        Easy come, easy go, will you let me go?<br>
+        Bismillah! No, we will not let you go. (Let him go!)<br>
+        Bismillah! We will not let you go. (Let him go!)<br>
+        Bismillah! We will not let you go. (Let me go!)<br>
+        Will not let you go. (Let me go!)<br>
+        Never let you go (Never, never, never, never let me go)<br>
+        Oh oh oh oh<br>
+        No, no, no, no, no, no, no<br>
+        Oh, mama mia, mama mia (Mama mia, let me go.)<br>
+        Beelzebub has a devil put aside for me, for me, for me.<br>
+        <br>
+
+        So you think you can stone me and spit in my eye?<br>
+        So you think you can love me and leave me to die?<br>
+        Oh, baby, can't do this to me, baby,<br>
+        Just gotta get out, just gotta get right outta here.<br>
+        <br>
+        (Ooooh, ooh yeah, ooh yeah)<br>
+        <br>
+        Nothing really matters,<br>
+        Anyone can see,<br>
+        Nothing really matters,<br>
+        Nothing really matters to me.<br>
+        <br>
         Any way the wind blows.</p>
     </section>
     `,

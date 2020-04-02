@@ -2,6 +2,7 @@
     margin: 0 auto;
     max-width: 800px;
     margin-top: 80px;
+    margin-bottom: 80px;
 
     .cover{
         max-width: 400px;
@@ -14,5 +15,11 @@
         max-width: 600px;
         display: block;
         margin: 0 auto;
+    }
+
+    .lyrics{
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 70px;
     }
 }
