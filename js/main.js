@@ -1,5 +1,7 @@
 import Movie from "./components/Movie.js";
 import TvShow from "./components/TvShow.js";
+import Audio from "./components/Audio.js";
+
 
 
 const vm = new Vue({
@@ -24,7 +26,8 @@ const vm = new Vue({
 
     components: {
         movie: Movie,
-        tvshow: TvShow
+        tvshow: TvShow,
+        audioplayer: Audio
     }
 
 }).$mount("#app");

@@ -3,6 +3,8 @@ export default {
     template: `
 
     <section class="videoPlayer tvshowPlayer">
+        <h2 class="title">Ozark</h2>
+
         <video ref="tvShow" @timeupdate="showTime">
             <source src="video/ozark.mp4" type="video/mp4">
             <track kind="subtitles" src="subtitles/subtitles_tvshow.vtt" srclang="en" default>
@@ -18,8 +20,8 @@ export default {
             <button @click.prevent="forward"class="forward">Forward</button>
             <h3>Volume</h3><span>{{ volume }}</span>
             <input type="range" min="0" max="100" v-model.number="volume"> 
-            <button @click.prevent="increaseVolume">+</button>
             <button @click.prevent="decreaseVolume">-</button>
+            <button @click.prevent="increaseVolume">+</button>
             <button @click.prevent="toggleFullScreen">full screen</button>
             <button @click.prevent="toggleSubtitles">CC</button>
         </div>

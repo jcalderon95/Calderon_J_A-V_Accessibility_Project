@@ -3,6 +3,8 @@ export default {
     template: `
 
     <section class="videoPlayer">
+        <h2 class="title">Avengers</h2>
+
         <video ref="movie" @timeupdate="showTime">
             <source src="video/avengers.mp4" type="video/mp4">
             <track kind="subtitles" src="subtitles/subtitles_movie.vtt" srclang="en" default>
@@ -17,9 +19,9 @@ export default {
             <button @click.prevent="rewind" class="rewind">Rewind</button>
             <button @click.prevent="forward"class="forward">Forward</button>
             <h3>Volume</h3><span>{{ volume }}</span>
-            <input type="range" min="0" max="100" v-model.number="volume"> 
-            <button @click.prevent="increaseVolume">+</button>
+            <input type="range" min="0" max="100" v-model.number="volume">
             <button @click.prevent="decreaseVolume">-</button>
+            <button @click.prevent="increaseVolume">+</button>
             <button @click.prevent="toggleFullScreen">full screen</button>
             <button @click.prevent="toggleSubtitles">CC</button>
         </div>

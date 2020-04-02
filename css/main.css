@@ -1,2 +1,2 @@
-.videoPlayer{margin:0 auto;max-width:800px}.videoPlayer video{max-width:600px;display:block;margin:0 auto;margin-top:80px}.videoPlayer .videoControls{max-width:600px;display:block;margin:0 auto}.hidden{display:none}
+.audioPlayer{margin:0 auto;max-width:800px;margin-top:80px}.audioPlayer .cover{max-width:400px;display:block;margin:0 auto;margin-bottom:30px}.audioPlayer .audioControls{max-width:600px;display:block;margin:0 auto}.videoPlayer{margin:0 auto;max-width:800px;margin-top:80px}.videoPlayer video{max-width:600px;display:block;margin:0 auto}.videoPlayer .videoControls{max-width:600px;display:block;margin:0 auto}.hidden{display:none}.title{text-align:center;margin-bottom:20px}
 /*# sourceMappingURL=main.css.map */

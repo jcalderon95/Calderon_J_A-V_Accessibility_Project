@@ -1,11 +1,12 @@
 .videoPlayer{
     margin: 0 auto;
     max-width: 800px;
+    margin-top: 80px;
+    
     video{
         max-width: 600px;
         display: block;
         margin: 0 auto;
-        margin-top: 80px;
     }
 
     .videoControls{
