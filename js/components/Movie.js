@@ -5,7 +5,7 @@ export default {
     <section class="videoPlayer">
         <h2 class="title">Avengers</h2>
 
-        <video ref="movie" @timeupdate="showTime">
+        <video ref="movie" @timeupdate="showTime" poster="images/avengers_poster.jpg">
             <source src="video/avengers.mp4" type="video/mp4">
             <track kind="subtitles" src="subtitles/subtitles_movie.vtt" srclang="en" default>
             <p>Your browser doesn't support HTML5 video. Here is a <a href="video/avengers.mp4">link to the video</a> instead.</p>

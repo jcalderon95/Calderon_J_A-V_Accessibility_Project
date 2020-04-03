@@ -3,8 +3,8 @@ export default {
     template: `
 
     <section class="audioPlayer">
-        <h2 class="title">Bohemian Rhapsodi</h2>
-        <img class="cover" src="images/bohemian_rapsodi.jpg" alt="Bohemian Rapsodi Cover Album">
+        <h2 class="title">Bohemian Rhapsody</h2>
+        <img class="cover" src="images/bohemian_rapsody.jpg" alt="Bohemian Rapsody Cover Album">
 
         <audio ref="audio" @timeupdate="showTime" >
             <source src="audio/Bohemian_Rhapsodi.mp3" type="audio/mpeg">

@@ -5,7 +5,7 @@ export default {
     <section class="videoPlayer tvshowPlayer">
         <h2 class="title">Ozark</h2>
 
-        <video ref="tvShow" @timeupdate="showTime">
+        <video ref="tvShow" @timeupdate="showTime" poster="images/ozark_poster.jpg">
             <source src="video/ozark.mp4" type="video/mp4">
             <track kind="subtitles" src="subtitles/subtitles_tvshow.vtt" srclang="en" default>
             <p>Your browser doesn't support HTML5 video. Here is a <a href="video/avengers.mp4">link to the video</a> instead.</p>
