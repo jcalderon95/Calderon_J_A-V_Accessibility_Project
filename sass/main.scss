@@ -1,0 +1,38 @@
+@import 'modules/_audio';
+@import 'modules/_video';
+@import 'modules/_progressBar';
+@import 'modules/_volumeBar';
+@import 'modules/_buttons';
+
+
+
+.hidden{
+    display: none;
+}
+
+h1{
+    margin-top: 50px;
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+body{
+    font-family: 'Sen', sans-serif;
+}
+
+p{
+    margin-top: 20px;
+    font-family: 'Sen', sans-serif;
+    line-height: 25px;
+}
+.title{
+    font-family: 'Sen', sans-serif;
+    font-size: 26px;
+}
+
+.time{
+    font-size: 20px;
+}
