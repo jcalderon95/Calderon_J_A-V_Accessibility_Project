@@ -16,16 +16,23 @@ export default {
                 <span class="time">{{ time }}</span>
                 <input class="progressBar" ref="progressBar" @change="updateProgress" type="range" min="0" max="100" v-model.number="progress"> 
             </div>
-            <button @click.prevent="play" class="playpause">{{playPause}}</button>
-            <button @click.prevent="stop" class="stop">Stop</button>
-            <button @click.prevent="rewind" class="rewind">Rewind</button>
-            <button @click.prevent="forward"class="forward">Forward</button>
-            <h3>Volume</h3><span>{{ volume }}</span>
-            <input type="range" min="0" max="100" v-model.number="volume"> 
-            <button @click.prevent="decreaseVolume">-</button>
-            <button @click.prevent="increaseVolume">+</button>
-            <button @click.prevent="toggleFullScreen">full screen</button>
-            <button @click.prevent="toggleSubtitles">CC</button>
+
+            <div class="buttonsCon">
+                <button @click.prevent="play" class="playpause">{{playPause}}</button>
+                <button @click.prevent="stop" class="stop">Stop</button>
+                <button @click.prevent="rewind" class="rewind">Rewind</button>
+                <button @click.prevent="forward"class="forward">Forward</button>
+                <button @click.prevent="toggleFullScreen">Full Screen</button>
+                <button @click.prevent="toggleSubtitles">CC</button>
+            </div>
+
+            <div class="volumeButtons">
+                <h3 class="volume">Volume:</h3> <span class="volume">{{ volume }}</span>
+                <input class="volumeBar" type="range" min="0" max="100" v-model.number="volume"> 
+                <button @click.prevent="decreaseVolume">-</button>
+                <button @click.prevent="increaseVolume">+</button>
+            </div>
+
         </div>
     </section>
     `,
@@ -80,14 +87,14 @@ export default {
         rewind(){
             let tvShow = this.$refs.tvShow;
             
-            tvShow.currentTime -= 3;
+            tvShow.currentTime -= 5;
         },
 
         forward(){
             let tvShow = this.$refs.tvShow;
 
-            tvShow.currentTime += 3;
-            if(tvShow.currentTime >= tvShow.duration || tvShow.paused) {
+            tvShow.currentTime += 5;
+            if(tvShow.currentTime >= tvShow.duration) {
                 tvShow.pause();
                 tvShow.currentTime = 0;
                 this.playPause = "Play";
