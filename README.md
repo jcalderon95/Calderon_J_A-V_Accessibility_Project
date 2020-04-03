@@ -4,7 +4,6 @@
  
 Multimedia web application created using best practices for video, audio and special needs. The focus of this applications is making media accessible for everybody.
 
-Visit the Site [Chat App](https://chat-app-authoring4.herokuapp.com/)
 
 ## Prerequisites
 
